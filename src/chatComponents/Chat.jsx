@@ -121,7 +121,7 @@ export default function Chat() {
         config={config}
         messageParser={MessageParser}
         actionProvider={ActionProvider}
-        headerText=" MentorIA"
+        headerText="&nbsp;&nbsp;MentorIA"
         placeholderText="Digite sua dúvida..."
       />
     </div>
