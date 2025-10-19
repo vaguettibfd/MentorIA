@@ -116,12 +116,37 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
 export default function Chat() {
   return (
-    <div style={{ width: '90%', margin: 'auto', marginTop: '30px' }}>
+   
+    <div
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      width: '100%',
+      minHeight: '100vh', // ocupa toda a altura da tela
+      margin: 0,
+      paddingTop: '1px',
+      boxSizing: 'border-box',
+      //backgroundColor: '#f8f9f6', // opcional, fundo neutro
+    }}
+   >
+      <img
+        src={`${import.meta.env.BASE_URL}MentorIA_banner_300kb.svg`}
+        alt="Banner MentorIA"
+        style={{
+          display: 'block',
+          margin: '0 auto 0 auto',
+          width: '65%',
+          maxWidth: '900px',
+          height: 'auto',
+        }}
+      />
       <Chatbot
         config={config}
         messageParser={MessageParser}
         actionProvider={ActionProvider}
-        headerText="&nbsp;&nbsp;MentorIA"
+        headerText="Ensino de Computação - IFB"
         placeholderText="Digite sua dúvida..."
       />
     </div>
