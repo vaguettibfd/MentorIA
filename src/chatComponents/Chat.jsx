@@ -149,6 +149,20 @@ export default function Chat() {
         headerText="Ensino de Computação - IFB"
         placeholderText="Digite sua dúvida..."
       />
+      <a
+        href="https://cors-anywhere.herokuapp.com/corsdemo"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          marginTop: '10px',
+          color: '#509E2F',
+          fontWeight: 'bold',
+          textDecoration: 'none',
+          fontFamily: 'Poppins, sans-serif',
+        }}
+      >
+        🔗 Clique aqui caso não responda adequadamente
+      </a>
     </div>
   );
 }
