@@ -1,23 +1,60 @@
 /* chatbot-custom.css */
 .react-chatbot-kit-chat-container {
-  width: 100% !important; /* 👈 força a nova largura */
+  width: 100% !important; /* 👈 força a nova largura */ 
   max-width: 100%;
 }
+
 /* === Força o alinhamento do BOT à esquerda === */
-.react-chatbot-kit-chat-bot-message-container {
+/*.react-chatbot-kit-chat-bot-message-container {
   display: flex !important;
   justify-content: flex-start !important;
-}
+}*/
 
 /* === Ajusta a bolha da mensagem do BOT === */
-.react-chatbot-kit-chat-bot-message {
-  background-color: #65dab3 !important; /* cor neutra */
-  color: #000 !important;
+
+/*.react-chatbot-kit-chat-bot-message {
+  background-color: #65dab3 !important; *//* cor neutra */
+/*  color: #000 !important;
   border-radius: 16px !important;
   padding: 10px 14px !important;
   max-width: 80% !important;
   align-self: flex-start !important;
   text-align: left !important;
+}*/
+/* === Agrupa avatar e mensagem lado a lado === */
+.react-chatbot-kit-chat-bot-message-container {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  flex-direction: row !important;
+  width: 100% !important; /* ocupa toda a largura do chat */
+}
+
+/* === Ajuste da bolha === */
+.react-chatbot-kit-chat-bot-message {
+  background-color: #65dab3 !important; /* verde MentorIA */
+  color: #000 !important;
+  border-radius: 16px !important;
+  padding: 14px 18px !important;
+  margin-left: 10px !important; /* separa da coruja */
+  margin-right: 10px !important;
+  max-width: calc(100% - 80px) !important; /* ocupa quase tudo, respeitando avatar e bordas */
+  width: 100% !important;
+  text-align: left !important;
+  align-self: stretch !important;
+  float: none !important;
+  box-sizing: border-box !important;
+  word-wrap: break-word !important;
+}
+
+/* === Avatar mantém tamanho fixo === */
+.react-chatbot-kit-chat-bot-avatar-container {
+  flex-shrink: 0 !important;
+}
+
+/* === Opcional: espaçamento vertical entre mensagens === */
+.react-chatbot-kit-chat-bot-message-container + .react-chatbot-kit-chat-bot-message-container {
+  margin-top: 8px !important;
 }
 
 /* === Corrige a setinha do BOT (triângulo) === */
@@ -56,16 +93,16 @@
   background-color: #cacfc2 !important; /* tom de cinza-verde */
   color: #fff !important;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 13px;
   display: flex !important; /* habilita flex layout */
   justify-content: center !important; /* centraliza horizontalmente */
   align-items: center !important; /* centraliza verticalmente */
-  padding: 12px 0;
+  padding: 8px 0;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
 
-.react-chatbot-kit-chat-header::before {
+/*react-chatbot-kit-chat-header::before {
   content: '';
   background: url('/MentorIA_logo_final.svg') no-repeat center;
   background-color: #fff;
@@ -78,4 +115,4 @@
   border-right: 3px solid #fff !important;
   border-top: 3px solid #fff !important;
   border-bottom: 3px solid #fff !important;
-}
+}*/
