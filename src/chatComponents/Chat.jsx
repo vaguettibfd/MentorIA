@@ -123,7 +123,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
              : https://cors-anywhere.herokuapp.com/corsdemo
         */
       const response = await fetch(
-        'https://cors-anywhere.herokuapp.com/http://200.130.152.78:5678/webhook/aula5',
+        'https://cors-anywhere.herokuapp.com/http://200.130.152.78:5678/webhook/mentoria',
         {
           method: 'POST',
           headers: {
