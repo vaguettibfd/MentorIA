@@ -7,6 +7,54 @@ import './ifbbot.css';
 //import BotAvatar from './avatar1.svg';
 //import UserAvatar from './avatar2.svg';
 
+//==== Gera SessionId =======
+function getTurno() {
+  const hora = new Date().getHours();
+  if (hora >= 5 && hora < 12) return "manha";
+  if (hora >= 12 && hora < 18) return "tarde";
+  return "noite";
+}
+
+// Função principal para gerar o sessionId
+function generateSessionId() {
+  // Captura data e hora no formato ISO compacto
+  //const data = new Date().toISOString().replace(/[-:T.Z]/g, "").slice(0, 14); 
+
+  const hoje = new Date();
+  const ano = hoje.getFullYear();
+  const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+  const dia = String(hoje.getDate()).padStart(2, "0");
+  const data = `${ano}${mes}${dia}`; // Ex: 20251021
+
+  const turno = getTurno();
+
+  // Identifica o navegador (browser)
+  const browser = (() => {
+    const ua = navigator.userAgent.toLowerCase();
+    if (ua.includes("chrome") && !ua.includes("edge")) return "chrome";
+    if (ua.includes("firefox")) return "firefox";
+    if (ua.includes("safari") && !ua.includes("chrome")) return "safari";
+    if (ua.includes("edge")) return "edge";
+    if (ua.includes("opera") || ua.includes("opr")) return "opera";
+    return "outro";
+  })();
+
+  // Cria um hash simples a partir das informações
+  const base = `${data}-${turno}-${browser}`;
+  const hash = btoa(base).replace(/[^a-zA-Z0-9]/g, "").slice(0, 12);
+
+  // SessionId final (ex: 20251021T0830_MANHA_CHROME_abcd1234)
+  // return `${data}_${turno}_${browser}_${hash}`;
+  return `${data}_${turno}_${browser}`;
+}
+
+
+// Exemplo de uso:
+const sessionId = generateSessionId();
+console.log("Session ID gerado:", sessionId);
+//===== fim SessionId =======
+
+
 // === Configuração do chatbot ===
 const config = {
   botName: 'MentorIA - IFB',
@@ -82,7 +130,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             'Content-Type': 'application/json',
             'x-requested-with': 'XMLHttpRequest',
           },
-          body: JSON.stringify({ user_message: message }),
+          body: JSON.stringify({ 
+            sessionId : sessionId,
+            user_message: message }),
         }
       );
 
@@ -113,6 +163,8 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     React.cloneElement(child, { actions: { handleUserMessage } })
   );
 };
+
+
 
 export default function Chat() {
   return (
