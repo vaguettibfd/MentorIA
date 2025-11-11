@@ -121,9 +121,10 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
              Para ativar o cors termporatiamente clicando acessando o 
              link a seguir antes de rodar a aplicação no stackblitz
              : https://cors-anywhere.herokuapp.com/corsdemo
+             'https://cors-anywhere.herokuapp.com/http://200.130.152.78:5678/webhook/mentoria'
         */
       const response = await fetch(
-        'https://cors-anywhere.herokuapp.com/http://200.130.152.78:5678/webhook/mentoria',
+        'https://n8n.incluc0de.com.br/webhook/mentoria',
         {
           method: 'POST',
           headers: {
@@ -201,7 +202,7 @@ export default function Chat() {
         headerText="Ensino de Computação - IFB"
         placeholderText="Digite sua dúvida..."
       />
-      <a
+      {/*<a
         href="https://cors-anywhere.herokuapp.com/corsdemo"
         target="_blank"
         rel="noopener noreferrer"
@@ -214,7 +215,7 @@ export default function Chat() {
         }}
       >
         🔗 Clique aqui caso não responda adequadamente
-      </a>
+      </a>*/}
     </div>
   );
 }
