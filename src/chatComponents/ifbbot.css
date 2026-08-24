@@ -31,7 +31,7 @@
 }
 
 /* === Ajuste da bolha === */
-.react-chatbot-kit-chat-bot-message {
+.react-chatbot-kit-chat-bot-message-old {
   background-color: #65dab3 !important; /* verde MentorIA */
   color: #000 !important;
   border-radius: 16px !important;
@@ -46,6 +46,32 @@
   box-sizing: border-box !important;
   word-wrap: break-word !important;
 }
+
+.react-chatbot-kit-chat-bot-message {
+  background-color: #65dab3 !important;
+  color: #000 !important;
+  border-radius: 16px !important;
+  padding: 14px 18px !important;
+
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+
+  width: auto !important;
+  max-width: calc(100% - 80px) !important;
+  min-width: 0 !important;
+
+  flex: 1 1 auto !important;
+
+  text-align: left !important;
+  align-self: flex-start !important;
+
+  float: none !important;
+  box-sizing: border-box !important;
+
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
 
 /* === Avatar mantém tamanho fixo === */
 .react-chatbot-kit-chat-bot-avatar-container {
@@ -251,4 +277,132 @@
     border: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     margin: 16px 0;
+}
+
+/* ========================================
+   Responsividade para smartphones
+   ======================================== */
+
+   @media (max-width: 600px) {
+
+    /* Chat nunca ultrapassa a largura da tela */
+    .react-chatbot-kit-chat-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Área interna do chat */
+    .react-chatbot-kit-chat-inner-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Container das mensagens */
+    .react-chatbot-kit-chat-message-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    /* Linha avatar + mensagem do MentorIA */
+    .react-chatbot-kit-chat-bot-message-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+
+        display: flex !important;
+        align-items: flex-start !important;
+    }
+
+    /* Bolha da mensagem do MentorIA */
+    .react-chatbot-kit-chat-bot-message {
+        width: auto !important;
+        max-width: calc(100% - 58px) !important;
+        min-width: 0 !important;
+
+        flex: 1 1 auto !important;
+
+        margin-left: 6px !important;
+        margin-right: 0 !important;
+
+        padding: 12px 14px !important;
+
+        box-sizing: border-box !important;
+
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+    }
+
+    /* Linha das mensagens do usuário */
+    .react-chatbot-kit-user-chat-message-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Bolha do usuário */
+    .react-chatbot-kit-user-chat-message {
+        width: auto !important;
+        max-width: calc(100% - 58px) !important;
+        min-width: 0 !important;
+
+        box-sizing: border-box !important;
+
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+    }
+
+    /* Campo inferior de envio */
+    .react-chatbot-kit-chat-input-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .react-chatbot-kit-chat-input {
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Conteúdo Markdown */
+    .mentoria-markdown {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+    }
+
+    /* Imagens dentro das respostas */
+    .mentoria-markdown img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Tabelas Markdown */
+    .mentoria-markdown table {
+        max-width: 100%;
+    }
+
+    /*
+     * Código pode precisar de rolagem horizontal.
+     * A rolagem fica SOMENTE dentro do bloco de código,
+     * e não na página inteira.
+     */
+    .mentoria-markdown pre {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: auto;
+        white-space: pre;
+    }
 }
