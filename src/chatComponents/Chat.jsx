@@ -4,6 +4,8 @@ import Chatbot from 'react-chatbot-kit';
 import 'react-chatbot-kit/build/main.css';
 import './ifbbot.css';
 
+import MarkdownMessage from './MarkdownMessage';
+
 //import BotAvatar from './avatar1.svg';
 //import UserAvatar from './avatar2.svg';
 
@@ -103,6 +105,9 @@ const config = {
         }}
       />
     ),
+    botChatMessage: (props) => ( 
+      <MarkdownMessage {...props} /> 
+      ),
   },
 };
 
