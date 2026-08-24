@@ -17,6 +17,35 @@
 
 
 /* ========================================
+   Container interno do Chat
+   ======================================== */
+
+.react-chatbot-kit-chat-inner-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* ========================================
+   Container geral das mensagens
+   ======================================== */
+
+.react-chatbot-kit-chat-message-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* ========================================
    Container das mensagens do MentorIA
    ======================================== */
 
@@ -169,7 +198,7 @@
     justify-content: center !important;
     align-items: center !important;
 
-    padding: 8px 0;
+    padding: 8px 12px;
 
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -192,12 +221,6 @@
     overflow-wrap: anywhere;
     word-break: break-word;
 }
-
-
-/*
- * Impede que elementos internos do Markdown
- * aumentem a largura da bolha.
- */
 
 .mentoria-markdown * {
     max-width: 100%;
@@ -355,15 +378,6 @@
     -webkit-overflow-scrolling: touch;
 }
 
-
-/*
- * Dentro de <pre>, o código mantém sua
- * formatação original.
- *
- * Caso seja maior que a tela, somente o
- * bloco de código terá rolagem horizontal.
- */
-
 .mentoria-markdown pre code {
     display: block;
 
@@ -415,10 +429,6 @@
 
     border-collapse: collapse;
 
-    /*
-     * Evita que o conteúdo de uma coluna
-     * force a tabela para fora da tela.
-     */
     table-layout: fixed;
 
     margin: 12px 0;
@@ -472,7 +482,7 @@
 
 
 /* ========================================
-   Campo de entrada
+   Área inferior - campo de entrada
    ======================================== */
 
 .react-chatbot-kit-chat-input-container {
@@ -480,11 +490,48 @@
     max-width: 100% !important;
     min-width: 0 !important;
 
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    padding-bottom: 12px !important;
+
     box-sizing: border-box !important;
+
+    background-color: #ffffff !important;
 }
+
+
+/* ========================================
+   Campo de texto
+   ======================================== */
 
 .react-chatbot-kit-chat-input {
     min-width: 0 !important;
+
+    padding: 12px 14px !important;
+
+    border: 1px solid #d5d5d5 !important;
+    border-radius: 10px 0 0 10px !important;
+
+    box-sizing: border-box !important;
+
+    font-size: 16px !important;
+
+    outline: none !important;
+}
+
+.react-chatbot-kit-chat-input:focus {
+    border-color: #98a92c !important;
+}
+
+
+/* ========================================
+   Botão enviar
+   ======================================== */
+
+.react-chatbot-kit-chat-btn-send {
+    min-width: 48px !important;
+
+    border-radius: 0 10px 10px 0 !important;
 
     box-sizing: border-box !important;
 }
@@ -513,12 +560,14 @@
 
 
     /* ====================================
-       Área das mensagens
+       Espaçamento lateral das mensagens
        ==================================== */
 
     .react-chatbot-kit-chat-message-container {
-        padding-left: 6px !important;
-        padding-right: 6px !important;
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+
+        box-sizing: border-box !important;
     }
 
 
@@ -549,11 +598,6 @@
         max-width: calc(100% - 58px) !important;
         min-width: 0 !important;
 
-        /*
-         * O zero é importante para que o
-         * Flexbox calcule a largura usando
-         * o espaço realmente disponível.
-         */
         flex: 1 1 0 !important;
 
         margin-left: 6px !important;
@@ -605,7 +649,6 @@
         overflow-wrap: anywhere !important;
         word-break: break-word !important;
     }
-
 
     .mentoria-markdown p,
     .mentoria-markdown li,
@@ -686,7 +729,7 @@
 
 
     /* ====================================
-       Campo de entrada
+       Área inferior de entrada
        ==================================== */
 
     .react-chatbot-kit-chat-input-container {
@@ -694,11 +737,42 @@
         max-width: 100% !important;
         min-width: 0 !important;
 
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        padding-bottom: 8px !important;
+
         box-sizing: border-box !important;
+
+        background-color: #ffffff !important;
     }
+
+
+    /* ====================================
+       Campo de texto no Smartphone
+       ==================================== */
 
     .react-chatbot-kit-chat-input {
         min-width: 0 !important;
+
+        padding: 12px 14px !important;
+
+        border: 1px solid #d5d5d5 !important;
+        border-radius: 10px 0 0 10px !important;
+
+        box-sizing: border-box !important;
+
+        font-size: 16px !important;
+    }
+
+
+    /* ====================================
+       Botão enviar no Smartphone
+       ==================================== */
+
+    .react-chatbot-kit-chat-btn-send {
+        min-width: 48px !important;
+
+        border-radius: 0 10px 10px 0 !important;
 
         box-sizing: border-box !important;
     }
