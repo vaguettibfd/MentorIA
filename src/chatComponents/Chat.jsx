@@ -421,32 +421,10 @@ export default function Chat() {
       {/* Banner */}
 
       <img
-        src={
-          `${import.meta.env.BASE_URL}` +
-          chatConfig.images.banner
-        }
-
-        alt={
-          chatConfig.bot.name
-        }
-
-        style={{
-          display:
-            'block',
-
-          margin:
-            '0 auto',
-
-          width:
-            '65%',
-
-          maxWidth:
-            '900px',
-
-          height:
-            'auto',
-        }}
-      />
+  src={`${import.meta.env.BASE_URL}${chatConfig.images.banner}`}
+  alt={chatConfig.bot.name}
+  className="mentoria-banner"
+/>
 
 
       {/* Chat */}
